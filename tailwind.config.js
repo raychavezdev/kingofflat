@@ -6,10 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-
-      backgroundImage:{
-        "banner":"url(foto1.jpg)"
-      },
       fontFamily:{
         "sigmar": ["Sigmar","serif"],
         "roboto": ["Roboto","serif"],
