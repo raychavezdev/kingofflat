@@ -1,17 +1,29 @@
-import Container from "../../utils/Container";
+import useFetchData from "../../../utils/useFetchData";
+import Container from "../../layouts/Container";
 import PlayerCard from "./PlayerCard";
 import PlayerItem from "./PlayerItem";
-import players from "../../../utils/players.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const PlayersBoard = () => {
-  console.log(players);
+  const [selectedPlayer, setSelectedPlayer] = useState("");
+  const { data: players, error, loading } = useFetchData(`/`);
 
-  const [selectedPlayer, setSelectedPlayer] = useState(players[0]);
+  useEffect(() => {
+    if (players) {
+      setSelectedPlayer(players[0]);
+    }
+  }, [players]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   const handleClick = (player) => {
     setSelectedPlayer(player);
   };
+
+  if (!players) {
+    return <p>No players available</p>;
+  }
 
   return (
     <section id="skaters" className="mt-24">

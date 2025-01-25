@@ -1,6 +1,6 @@
 import InstagramIcon from "../../icons/InstagramIcon";
 import YoutubeIcon from "../../icons/YoutubeIcon";
-import Container from "../../utils/Container";
+import Container from "../../layouts/Container";
 
 const Contact = () => {
   const sponsors = [

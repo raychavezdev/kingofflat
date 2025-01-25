@@ -1,7 +1,15 @@
-import Container from "../../utils/Container";
-import players from "../../../utils/players.json";
+import Container from "../../layouts/Container";
+import useFetchData from "../../../utils/useFetchData";
 
 const ScoreBoard = () => {
+  const { data: players, error, loading } = useFetchData(`/`);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+  if (!players) {
+    return <p>No players available</p>;
+  }
   return (
     <section id="scoreboard" className="mt-32">
       <Container className="text-center">
@@ -17,10 +25,15 @@ const ScoreBoard = () => {
           <tbody>
             {players.map((player, i) => (
               <tr key={i} className="bg-gray-600 border-b border-gray-500">
-                <td className="p-4">{player.name}</td>
+                <td className="p-4 capitalize">{player.name}</td>
                 <td className="p-4">{player.points}</td>
                 <td className="p-4">
-                  <a href="#">{player.instagram}</a>
+                  <a
+                    target="_blank"
+                    href={`https://www.instagram.com/${player.instagram}/`}
+                  >
+                    @{player.instagram}
+                  </a>
                 </td>
               </tr>
             ))}

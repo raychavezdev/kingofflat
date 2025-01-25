@@ -2,12 +2,18 @@ const PlayersCard = ({ player }) => {
   return (
     <div>
       <div>
-        <img className="" src="player.jpg" alt="" />
-        <p className="text-xl font-sigmar tracking-widest">{player.name}</p>
+        <img className="w-80" src={player.img} alt="" />
+        <p className="text-xl font-sigmar tracking-widest capitalize">
+          {player.name}
+        </p>
         <p>Puntos: {player.points}</p>
         <p>
           Ig:{" "}
-          <a className="font-bold" href="#">
+          <a
+            className="font-bold"
+            target="_blank"
+            href={`https://www.instagram.com/${player.instagram}/`}
+          >
             {player.instagram}
           </a>
         </p>
