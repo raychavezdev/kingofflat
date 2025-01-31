@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const PlayersBoard = () => {
   const [selectedPlayer, setSelectedPlayer] = useState("");
-  const { data: players, error, loading } = useFetchData(`/`);
+  const { data: players, error, loading } = useFetchData("/");
 
   useEffect(() => {
     if (players) {
@@ -14,7 +14,7 @@ const PlayersBoard = () => {
     }
   }, [players]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Cargando patinadores...</p>;
   if (error) return <p>Error: {error}</p>;
 
   const handleClick = (player) => {
@@ -22,7 +22,7 @@ const PlayersBoard = () => {
   };
 
   if (!players) {
-    return <p>No players available</p>;
+    return <p>No hay patinadores disponibles</p>;
   }
 
   return (

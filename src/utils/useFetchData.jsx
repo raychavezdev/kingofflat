@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
 const useFetchData = (endpoint = "") => {
-  const baseURL = "https://palevioletred-buffalo-273277.hostingersite.com/";
+  const baseURL = "https://palevioletred-buffalo-273277.hostingersite.com";
+
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);

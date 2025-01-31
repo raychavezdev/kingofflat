@@ -1,5 +1,4 @@
 const PlayerItem = ({ player, onClick }) => {
-  console.log(player.img);
   return (
     <div
       className={`bg-black bg-cover size-10 md:size-12 lg:size-14 xl:size-16 2xl:size-20 rounded-sm cursor-pointer hover:scale-105 relative  transition-transform text-xs overflow-hidden flex items-center justify-center`}

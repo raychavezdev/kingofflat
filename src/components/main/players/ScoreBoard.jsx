@@ -2,9 +2,9 @@ import Container from "../../layouts/Container";
 import useFetchData from "../../../utils/useFetchData";
 
 const ScoreBoard = () => {
-  const { data: players, error, loading } = useFetchData(`/`);
+  const { data: players, error, loading } = useFetchData("/");
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Cargando tabla de puntos...</p>;
   if (error) return <p>Error: {error}</p>;
 
   if (!players) {
@@ -29,10 +29,11 @@ const ScoreBoard = () => {
                 <td className="p-4">{player.points}</td>
                 <td className="p-4">
                   <a
+                    className="block  hover:scale-110 transition-transform will-change-transform"
                     target="_blank"
                     href={`https://www.instagram.com/${player.instagram}/`}
                   >
-                    @{player.instagram}
+                    {player.instagram != null && player.instagram}
                   </a>
                 </td>
               </tr>
