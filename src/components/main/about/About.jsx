@@ -10,7 +10,7 @@ const About = () => {
           <div className="flex flex-col gap-4">
             <p>
               King of Flat es una liga de Game of Skate en la que 27 skaters
-              competirán sábados y domingos por el título de King of Lad.
+              competirán sábados y domingos por el título de King of Flat.
             </p>
             <p>
               La liga está compuesta por dos formatos distintos, la primera fase

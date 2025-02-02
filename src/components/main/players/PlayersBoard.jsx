@@ -30,7 +30,7 @@ const PlayersBoard = () => {
       <Container className="text-center">
         <h2 className="text-2xl font-sigmar mb-10">Patinadores</h2>
         <div className="flex justify-between items-center">
-          <div className="flex flex-col justify-center gap-2  flex-wrap h-80 md:h-[20em] lg:h-[28em]">
+          <div className="flex flex-col justify-center gap-2  flex-wrap h-[22rem] md:h-[20em] lg:h-[28em]">
             {players.map(
               (player, i) =>
                 i % 2 === 0 && (
@@ -45,7 +45,7 @@ const PlayersBoard = () => {
           <div>
             <PlayerCard player={selectedPlayer} />
           </div>
-          <div className="flex flex-col justify-center gap-2 flex-wrap-reverse h-80 md:h-[20em] lg:h-[28em]">
+          <div className="flex flex-col justify-center gap-2 flex-wrap-reverse h-[22rem] md:h-[20em] lg:h-[28em]">
             {players.map(
               (player, i) =>
                 i % 2 !== 0 && (

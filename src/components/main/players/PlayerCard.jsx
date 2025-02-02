@@ -2,7 +2,7 @@ const PlayersCard = ({ player }) => {
   return (
     <div>
       <div>
-        <img className="w-80" src={player.img} alt="" />
+        <img className="w-72" src={player.img} alt="" />
         <p className="text-xl font-sigmar tracking-widest capitalize">
           {player.name}
         </p>
